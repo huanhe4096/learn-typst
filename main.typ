@@ -4,26 +4,42 @@
   title: "OHDSI Symposium Submission Title",
   authors: (
     (
-      name: "First Author",
+      name: "Huan He",
       affiliations: ("1",),
     ),
     (
-      name: "Second Author",
-      affiliations: ("1", "2"),
+      name: "Vincent J Zhang",
+      affiliations: ("1",),
     ),
     (
-      name: "Third Author",
-      affiliations: ("1", "2"),
+      name: "Lingfei Qian",
+      affiliations: ("1",),
+    ),
+    (
+      name: "Vipina K. Keloth",
+      affiliations: ("1",),
+    ),
+    (
+      name: "Ruey-Ling Weng",
+      affiliations: ("1",),
+    ),
+    (
+      name: "Yujia Zhou",
+      affiliations: ("1",),
+    ),
+    (
+      name: "Na Hong",
+      affiliations: ("1",),
+    ),
+    (
+      name: "Hua Xu",
+      affiliations: ("1"),
     ),
   ),
   affiliations: (
     (
       id: "1",
-      name: "Department of Biomedical Informatics and Data Science, Yale School of Medicine, New Haven, CT, USA",
-    ),
-    (
-      id: "2",
-      name: "Second Department or Organization, City, Country",
+      name: "Department of Biomedical Informatics and Data Science, Yale School of Medicine, New Haven, CT",
     ),
   ),
   doc,
