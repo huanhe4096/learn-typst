@@ -1,7 +1,7 @@
 #import "template.typ": submission, references-section
 
 #show: doc => submission(
-  title: "OHDSI Symposium Submission Title",
+  title: "From Eligibility Criteria to Patient Cohorts: An Agent-based Visual Analytics System for EHR Cohort Identification",
   authors: (
     (
       name: "Huan He",
