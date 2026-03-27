@@ -27,16 +27,6 @@ Use citations directly in the text with BibTeX keys, for example:
 This study builds on prior OHDSI work @hripcsak2015.
 ```
 
-Two common正文写法可以直接参考：
-
-```typst
-// 1. 纯上标引用
-This study builds on prior OHDSI work @hripcsak2015.
-
-// 2. 先描述文献观点，再在句末给上标引用
-Hripcsak and colleagues described the opportunities created by the OHDSI network @hripcsak2015.
-```
-
 With the default `vancouver-superscript` style, both examples render inline as
 superscript reference numbers, while the bibliography uses `1.`, `2.`, `3.`
 numbering.
