@@ -1,14 +1,14 @@
 #import "template.typ": submission, references-section
 
 #show: doc => submission(
-  title: "From Eligibility Criteria to Patient Cohorts: An Agent-based Visual Analytics System for EHR Cohort Identification",
+  title: "Towards Flexible and Automated Data Conversion to OMOP CDM Through an Agent Skill-based Approach",
   authors: (
     (
-      name: "Huan He",
+      name: [Huan He#super[\*]],
       affiliations: ("1",),
     ),
     (
-      name: "Vincent J Zhang",
+      name: [Vipina K. Keloth#super[\*]],
       affiliations: ("1",),
     ),
     (
@@ -16,11 +16,7 @@
       affiliations: ("1",),
     ),
     (
-      name: "Vipina K. Keloth",
-      affiliations: ("1",),
-    ),
-    (
-      name: "Ruey-Ling Weng",
+      name: "Vincent J Zhang",
       affiliations: ("1",),
     ),
     (
@@ -45,39 +41,60 @@
   doc,
 )
 
+#align(center)[
+  #text(size: 10pt)[\* These authors contributed equally as co-first authors.]
+]
+
 = Background
 
-This template should be used as a starting point for the submission. It should
-be a background of your understanding of the current state of the literature /
-science as it relates to the topic you are spotlighting in this brief report.
-This report should be on something that is unpublished in the literature. If
-you have a preprint on the topic and it is still not accepted in a peer-reviewed
-publication, we welcome the content for submission as well. Make sure to
-include a few citations of other people’s work. @hripcsak2015
-@reps2021
-
-This is a good place to explain why the problem you are solving is relevant to
-the OHDSI community, and what analytic use case you are aiming to address.
-Community infrastructure and documentation can also be cited directly. @ohdsi2024
-
-= Objective
-
-#lorem(100)
+Transforming heterogeneous clinical data into the OMOP Common Data Model (CDM)
+is a prerequisite for many OHDSI-based observational studies and downstream
+analytics. However, OMOP ETL development remains labor-intensive because source
+schemas vary across institutions, concept mapping requires careful alignment to
+standard vocabularies, and referential consistency must be maintained across
+clinical event tables. These challenges make ETL development difficult to
+standardize and reuse. To address this problem, we explored an agent-based
+skill that organizes OMOP ETL work into a structured and repeatable workflow.
+@hripcsak2015 @ohdsi2024
 
 
 = Methods
 
-#lorem(120)
-
+We implemented an Agent Skill to support OMOP CDM v5.4 ETL pipeline
+development. The workflow begins by inspecting source schema information or
+sample records to identify relevant OMOP domains and required fields. The agent
+then produces an explicit source-to-OMOP mapping plan that specifies how source
+tables and fields correspond to OMOP tables and columns. After the mapping plan
+is reviewed, the workflow generates ETL artifacts, including Python
+transformation scripts and SQL loading scripts. The skill also incorporates
+basic validation logic to check concept mapping completeness, referential
+integrity, and temporal consistency, while preserving original source values
+for traceability.
 
 = Results
 
-#lorem(90)
+This workflow demonstrated the feasibility of using an Agent Skill to support
+OMOP ETL design and implementation in a more structured manner. Instead of
+relying only on ad hoc manual scripting, the skill makes mapping assumptions
+explicit, scaffolds ETL generation around common OMOP domains, and produces
+reusable transformation and validation components. The approach is particularly
+useful for rapidly organizing pipelines for core domains such as PERSON,
+VISIT_OCCURRENCE, CONDITION_OCCURRENCE, DRUG_EXPOSURE, and MEASUREMENT while
+keeping unresolved mappings visible for later refinement.
+
+The project repository is available at
+#link("https://github.com/BIDS-Xu-Lab/omop-etl-skill")[https://github.com/BIDS-Xu-Lab/omop-etl-skill]
 
 
 = Conclusion
 
-#lorem(120)
+An Agent Skill provides a practical and lightweight approach for supporting
+OMOP ETL development. By structuring schema interpretation, mapping
+specification, code generation, and validation into a single workflow, it can
+reduce manual effort and improve transparency in the data conversion process.
+Future work will focus on expanding domain coverage, strengthening
+vocabulary-assisted concept mapping, and conducting more formal evaluations in
+real-world data conversion settings.
 
 
 // generate references section
