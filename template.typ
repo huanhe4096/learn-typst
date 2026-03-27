@@ -46,6 +46,14 @@
     block(above: 12pt, below: 6pt)[#it.body]
   }
 
+  show figure.caption: it => block[
+    #set text(size: 9pt)
+    #strong[
+      #it.supplement
+      #context it.counter.display(it.numbering)
+    ]#it.separator#it.body
+  ]
+
   [
     #align(center)[
       #text(size: 16pt, weight: "bold")[#title]

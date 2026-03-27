@@ -1,5 +1,4 @@
 #import "template.typ": submission, references-section
-
 #show: doc => submission(
   title: "Towards Flexible and Automated Data Conversion to OMOP CDM Through an Agent Skill-based Approach",
   authors: (
@@ -58,17 +57,98 @@ These challenges make ETL development difficult to standardize and reuse.
 To address this problem, we propose an agent skill-based approach for flexible and repeatable OMOP ETL development.
 With our customized agent skill `create-omop-etl`, coding agents such as Claude Code and Codex can use OMOP dictionary knowledge and evaluation procedures to dynamically generate ETL pipelines tailored to the input source data.
 
+#figure(
+  caption: [Overall description of the method and workflow.],
+  rect(
+    width: 100%,
+    height: 2in,
+    stroke: 0.8pt + gray,
+    radius: 4pt,
+    inset: 0pt,
+  )[
+    #align(center + horizon)[
+      #text(fill: gray)[Overall method and workflow figure]
+    ]
+  ],
+)
+
 
 = Methods
 
 We implemented an Agent Skill to support OMOP CDM v5.4 ETL pipeline development.
-The workflow begins by inspecting source schema information or sample records to identify relevant OMOP domains and required fields.
+As shown in Figure 1, the workflow begins by inspecting source schema information or sample records to identify relevant OMOP domains and required fields.
 The agent then produces an explicit source-to-OMOP mapping plan that specifies how source tables and fields correspond to OMOP tables and columns.
 After the mapping plan is reviewed, the workflow generates ETL artifacts, including Python transformation scripts and SQL loading scripts.
 The skill also incorporates basic validation logic to check concept mapping completeness, referential integrity, and temporal consistency, while preserving original source values for traceability.
 
 = Results
 
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1.2em,
+  row-gutter: 0pt,
+  [
+    #figure(
+      caption: [Representative datasets for validation.],
+      box(width: 100%)[
+        #set text(size: 10pt)
+        #table(
+          columns: (30%, 23%, 47%),
+          align: (left, right, left),
+          inset: 2pt,
+          stroke: 0.4pt,
+          [#strong[Dataset Name]],
+          [#strong[\# Records]],
+          [#strong[Example]],
+
+          [Dataset A],
+          [TBD],
+          [Registry export],
+
+          [Dataset B],
+          [TBD],
+          [EHR extract],
+
+          [Dataset C],
+          [TBD],
+          [FHIR resources],
+        )
+      ],
+    )
+  ],
+  [
+    #figure(
+      caption: [Example summary of ETL generation outputs.],
+      box(width: 100%)[
+        #set text(size: 9pt)
+        #table(
+          columns: (34%, 25%, 41%),
+          align: (left, center, left),
+          inset: 2pt,
+          stroke: 0.4pt,
+          [#strong[Output Artifact]],
+          [#strong[Generated]],
+          [#strong[Notes]],
+
+          [Mapping plan],
+          [Yes],
+          [Yes],
+
+          [Python ETL script],
+          [Yes],
+          [Yes],
+
+          [Validation report],
+          [Yes],
+          [Partial],
+        )
+      ],
+    )
+  ],
+)
+
+Table 1 summarizes representative datasets used to examine the workflow across multiple source formats and validation scenarios.
+Table 2 provides a compact example of the generated ETL artifacts and review status to illustrate how results can be presented side by side.
 This workflow demonstrated the feasibility of using an Agent Skill to support OMOP ETL design and implementation in a more structured manner.
 Instead of relying only on ad hoc manual scripting, the skill makes mapping assumptions explicit, scaffolds ETL generation around common OMOP domains, and produces reusable transformation and validation components.
 The approach is particularly useful for rapidly organizing pipelines for core domains such as PERSON, VISIT_OCCURRENCE, CONDITION_OCCURRENCE, DRUG_EXPOSURE, and MEASUREMENT while keeping unresolved mappings visible for later refinement.
