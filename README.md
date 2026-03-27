@@ -9,6 +9,10 @@ submission.
 - `main.typ`: example submission using the template
 - `refs.bib`: sample BibTeX references for citations and bibliography
 
+```math
+\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+```
+
 ## Usage
 
 Edit the metadata in `main.typ`:

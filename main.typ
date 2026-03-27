@@ -49,6 +49,8 @@ Transforming heterogeneous clinical data into the OMOP Common Data Model (CDM) i
 In practice, clinical study data are often assembled from multiple source formats and systems, such as registries, electronic health records (EHRs), insurance claims, SDTM datasets, surveys, or FHIR resources, each with different schemas, coding systems, and completeness patterns. @voss2015
 To map registry data, linked national health datasets, and FHIR-based data to the OMOP CDM, it usually requires an extract-transform-load (ETL) pipeline which provides source profiling, vocabulary mapping to standard concepts, restructuring into OMOP domains, and validation of person-level and temporal consistency. @oja2023 @peng2025
 
+test test
+
 However, OMOP ETL development still remains labor-intensive because source schemas vary across institutions, concept mapping requires careful alignment to standard vocabularies, and referential consistency must be maintained across clinical event tables.
 In practice, building an ETL pipeline usually involves multiple stages, including source profiling, mapping design, implementation, iterative testing and validation, evaluation of data quality and fidelity, and final deployment for downstream analyses.
 These steps also require multiple types of domain knowledge, including familiarity with the OMOP CDM, source data structures and conventions, phenotype and vocabulary mapping, and practical programming and data engineering skills. @papez2021
