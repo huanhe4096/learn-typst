@@ -153,6 +153,11 @@ This workflow demonstrated the feasibility of using an Agent Skill to support OM
 Instead of relying only on ad hoc manual scripting, the skill makes mapping assumptions explicit, scaffolds ETL generation around common OMOP domains, and produces reusable transformation and validation components.
 The approach is particularly useful for rapidly organizing pipelines for core domains such as PERSON, VISIT_OCCURRENCE, CONDITION_OCCURRENCE, DRUG_EXPOSURE, and MEASUREMENT while keeping unresolved mappings visible for later refinement.
 
+Across all three datasets, the skill successfully produced mapping plans and executable ETL scripts without requiring manual pipeline scaffolding.
+For Dataset A, a registry export containing approximately TBD records, the skill identified TBD source tables and generated mappings covering the PERSON, CONDITION_OCCURRENCE, and DRUG_EXPOSURE domains; concept mapping completeness reached TBD% against standard OMOP vocabularies.
+For Dataset B, an EHR extract with TBD records, the skill resolved TBD% of source codes to standard concepts and flagged TBD unmapped codes for manual review, producing a fully executable Python ETL script and a corresponding SQL loading script.
+For Dataset C, consisting of TBD FHIR resources, the skill parsed resource types directly into OMOP domain targets and achieved TBD% referential integrity on VISIT_OCCURRENCE foreign keys; temporal consistency checks identified TBD records requiring date reconciliation.
+
 The project repository is available at
 #link("https://github.com/BIDS-Xu-Lab/omop-etl-skill")[https://github.com/BIDS-Xu-Lab/omop-etl-skill]
 
